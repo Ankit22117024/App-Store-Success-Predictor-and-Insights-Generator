@@ -10,24 +10,10 @@ import os
 import sys
 import glob
 import time
-import os
-st.sidebar.subheader("🛠️ Debug Info")
-api_key_from_secrets = os.getenv("GEMINI_API_KEY")
-if api_key_from_secrets:
-    st.sidebar.success("GEMINI_API_KEY found in secrets!")
-    st.sidebar.code(f"Key Preview: ...{api_key_from_secrets[-4:]}")
-else:
-    st.sidebar.error("GEMINI_API_KEY not found in secrets.")
-# --- End of Debugging Section ---
 
-
-# --- Caching ---
-# The rest of your script follows...
-@st.cache_resource
-def load_engine():
-# ...
 # --- Path Correction ---
 # Add the 'src' directory to the Python path to allow for absolute imports
+# This must be done before importing from our custom packages
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from phase4.query_engine import QueryEngine
@@ -77,6 +63,19 @@ with st.sidebar:
     - **Phase 3:** Automated Report Generation
     - **Phase 4:** Intelligent Query System
     """)
+    st.markdown("---")
+    
+    # --- Temporary Debugging ---
+    # This section checks if the Streamlit secret is loaded correctly.
+    st.subheader("🛠️ Debug Info")
+    api_key_from_secrets = os.getenv("GEMINI_API_KEY")
+    if api_key_from_secrets:
+        st.success("GEMINI_API_KEY found in secrets!")
+        st.code(f"Key Preview: ...{api_key_from_secrets[-4:]}")
+    else:
+        st.error("GEMINI_API_KEY not found in secrets.")
+    # --- End of Debugging Section ---
+
     st.markdown("---")
     st.write("Built with Gemini & Streamlit.")
 
