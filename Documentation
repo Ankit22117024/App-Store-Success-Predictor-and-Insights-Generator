@@ -63,7 +63,7 @@ LLM Integration (llm_handler.py):
 
 The engine uses the Google Gemini API to transform the raw statistical findings into professional, human-like insights.
 
-It employs a "specialist" model, using distinct, context-rich prompts for each type of analysis to ensure the AI's response is highly relevant and data-grounded.
+It employs a "specialist" model, using distinct, context-rich prompts for each of an analysis to ensure the AI's response is highly relevant and data-grounded.
 
 It instructs the LLM to return a structured JSON response containing the insight_text and recommendations, ensuring reliable parsing.
 
@@ -116,7 +116,7 @@ Configure API Keys: Create a .env file in the project root and add your SERPAPI_
 
 Run the Pipeline: Execute the scripts from Phase 1, 2, and 3 in order to generate the data, insights, and report.
 
-Launch the Dashboard: Run streamlit run src/app_dashboard.py to start the web application.
+Launch the Dashboard: Run python -m streamlit run src/app_dashboard.py to start the web application.
 
 5. Conclusion
 The AI-Powered App Store Success Predictor successfully meets all project objectives, delivering a complete and automated intelligence pipeline. It demonstrates the power of combining traditional data analysis with modern Large Language Models to transform raw data into strategic, actionable business intelligence. The final Streamlit dashboard provides a polished and accessible interface, making the complex findings available to a non-technical audience and empowering data-driven decision-making.
